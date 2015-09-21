@@ -4,7 +4,14 @@ var router = express.Router();
 /* GET STORE subpage */
 
 router.get('/', function(req,res, next){
-  res.render('store', { title: 'Store'})
-})
+  res.render('store', { title: 'Store', 
+  messageURL: process.env.MESSAGE_URL});
+});
+
+router.route('/message')
+          .post(function(req, res, next){
+            console.log('Receiving message '+ req.body.message);
+            res.send('Message was ' + req.body.message);
+          });
 
 module.exports = router;
