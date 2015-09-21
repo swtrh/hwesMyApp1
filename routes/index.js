@@ -6,10 +6,4 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-/* STORE subpage */
-
-router.get('/store', function(req,res, next){
-  res.render('store', { title: 'Haralds Store'})
-})
-
 module.exports = router;
